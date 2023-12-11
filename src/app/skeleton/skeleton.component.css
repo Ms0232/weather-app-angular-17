@@ -1,0 +1,7 @@
+.skeleton {
+  background-color: #f0f0f0; /* Placeholder color */
+  border-radius: 4px; /* Adjust border-radius as needed */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /* Add other styles to mimic your skeleton loading appearance */
+}
