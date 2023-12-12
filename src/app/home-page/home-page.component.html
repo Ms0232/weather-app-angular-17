@@ -1,0 +1,52 @@
+<input
+  [(ngModel)]="title"
+  type="text"
+  placeholder="enter city"
+  class="justify-center rounded-sm bg-slate-200 ml-16 m-4 p-1"
+  (ngModelChange)="onInputChange()"
+/>
+
+<div *ngIf="isLoading; else content">
+  <!-- Skeleton UI -->
+  <app-skeleton height="760" width="400"></app-skeleton>
+</div>
+<ng-template #content>
+  <div class="container">
+    <div class="upper-data top-5">
+      @if (null ||undefined || current.temp_c<14) {
+      <img
+        src="../assets/Blue2Bhour2BFinland_by_Laurence2BNorah.jpg"
+        alt=""
+        priority
+        fill
+        class="absolute top-0"
+      />} @else {
+      <img
+        src="../assets/360_F_264270105_MZ58OXpvpfgdWiQALjxEvA0DLbbecZqo.jpg"
+        alt=""
+        priority
+        fill
+        class="top-0"
+      />}
+    </div>
+    <div class="flex flex-col justify-center mx-8">
+      <div class="location text-white text-[20px]">
+        {{ location.name }}({{ location.region }},{{ location.country }})
+      </div>
+      <div class="temperature text-white text-[4rem] font-extrabold">
+        {{ current.temp_c | number : "1.0-0" }}°C
+      </div>
+    </div>
+
+    <div class="lower-data text-white ml-2 text-xl">
+      UV index: {{ current.uv }}
+    </div>
+    <div class="lower-data text-white ml-2 text-xl">
+      humidity :{{ current.humidity }}
+    </div>
+    <div class="lower-data text-white ml-2 text-xl">
+      wind intensity : {{ current.wind_kph }} kph
+    </div>
+  </div>
+</ng-template>
+<app-new-one></app-new-one>
