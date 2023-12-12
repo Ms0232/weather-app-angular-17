@@ -5,6 +5,6 @@ import { CrudComponent } from './crud/crud.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomePageComponent },
-  { path: 'detailed', component: DetailedComponent },
-  { path: 'crud', component: CrudComponent },
+  { path: 'detailed', pathMatch: 'full', component: DetailedComponent },
+  { path: 'crud', pathMatch: 'full', component: CrudComponent },
 ];
